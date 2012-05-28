@@ -2,6 +2,7 @@ require "active_record"
 require "active_support/core_ext"
 require_relative "models/user"
 require "faker"
+require_relative "heroku_db_url"
 
 namespace :db do
 
@@ -9,6 +10,7 @@ namespace :db do
   ActiveRecord::Migration.verbose = true
 
   task :environment do
+    extend HerokuDbUrl
     ActiveRecord::Base.establish_connection(
         config_by_url(ENV['DATABASE_URL']) || YAML::load(File.open('config/database.yml'))["development"]
     )
