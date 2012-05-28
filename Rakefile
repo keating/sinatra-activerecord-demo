@@ -9,7 +9,9 @@ namespace :db do
   ActiveRecord::Migration.verbose = true
 
   task :environment do
-    ActiveRecord::Base.establish_connection(YAML::load(File.open('config/database.yml'))["development"])
+    ActiveRecord::Base.establish_connection(
+        config_by_url(ENV['DATABASE_URL']) || YAML::load(File.open('config/database.yml'))["development"]
+    )
   end
 
   desc "Migrate the database"
