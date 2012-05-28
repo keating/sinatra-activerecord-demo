@@ -1,11 +1,13 @@
 require 'sinatra/base'
 require 'active_record'
 require_relative 'models/user'
+require_relative 'heroku_db_url'
 
 class Enter < Sinatra::Base
+  extend HerokuDbUrl
 
   ActiveRecord::Base.establish_connection(
-      ENV['DATABASE_URL'] || YAML::load(File.open('config/database.yml'))["development"]
+      config_by_url(ENV['DATABASE_URL']) || YAML::load(File.open('config/database.yml'))["development"]
   )
 
   get '/' do
