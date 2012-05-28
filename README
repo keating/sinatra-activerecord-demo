@@ -1,0 +1,6 @@
+A demo project with sinatra, activeRecord and erb.
+Include the features:
+create
+read(list all)
+
+There is also a problem need to be resolved, that is displaying the validation messages of a form.

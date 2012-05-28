@@ -1,0 +1,18 @@
+<%#= provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <form method="post" action="/users/create">
+      <p>Name:</p>
+      <p><input name="user[name]" /></p>
+      <p>Email:</p>
+      <p><input name="user[email]" /></p>
+      <p>Password:</p>
+      <p><input name="user[password]" /></p>
+      <p>Confirmation:</p>
+      <p><input name="user[password_confirmation]" /></p>
+      <p><input type="submit" value="Create" class="button"></p>
+    </form>
+  </div>
+</div>

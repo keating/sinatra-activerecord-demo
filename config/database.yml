@@ -1,0 +1,10 @@
+
+development:
+  adapter: postgresql
+  database: sinatrademo
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: map
+  password: map
+  encoding: utf8
