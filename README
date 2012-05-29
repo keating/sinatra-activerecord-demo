@@ -4,3 +4,15 @@ create
 read(list all)
 
 There is also a problem need to be resolved, that is displaying the validation messages of a form.
+
+For Heroku:
+There is an error when I push to heroku,
+PGError: ERROR:  invalid value for parameter "client_min_messages"
+Then I forced my ActiveRecord down to 3.0.1 (from 3.1.0), the issue resolved.
+Maybe it's the difference between the PG database, mine is PG of version 9, but that on heroku is version 8.
+
+Sorry, forcing the ActiveRecord down, makes the method 'has_secure_password' useless.
+So I have to find another way for password.
+
+The example on heroku,
+http://sinatra-andy.heroku.com/
