@@ -12,7 +12,7 @@ module HerokuDbUrl
     host = host_arr[0]
     database = host_arr[1]
     {adapter: 'postgresql', host: host, database: database,
-        username: user, password: password, encoding: 'utf8', :min_messages => "warn"}
+        username: user, password: password, encoding: 'utf8'}#, :min_messages => "warn"}
   end
 
 end
